@@ -28,6 +28,7 @@ observePath <- function(path, handler, env = parent.frame(), quoted = FALSE,
   h_quo <- rlang::quo_set_env(rlang::enquo(handler), env)
 
   path <- as_route(path)
+  message("observing route: ", path)
 
   o <- observe({
     url <- domain$clientData$url_state
